@@ -5,13 +5,13 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pyhatchbabyrest",
-    version="2.0.1",
-    author="Kevin O'Connor",
-    author_email="kjoconnor@gmail.com",
+    version="2.1.0",
+    author="Kevin O'Connor, ViViDboarder",
+    author_email="kjoconnor@gmail.com, ViViDboarder@gmail.com",
     description="Python library to control Hatch Baby Rest devices",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/kjoconnor/pyhatchbabyrest",
+    url="https://github.com/ViViDboarder/pyhatchbabyrest",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",

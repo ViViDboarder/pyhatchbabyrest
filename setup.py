@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="pyhatchbabyrest",
+    name="pyhatchbabyrest-hass",
     version="2.1.0",
     author="Kevin O'Connor, ViViDboarder",
     author_email="kjoconnor@gmail.com, ViViDboarder@gmail.com",

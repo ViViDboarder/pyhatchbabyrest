@@ -28,7 +28,6 @@ class SaveConnectBleakClient(BleakClient):
             self.was_open = False
 
 
-
 class PyHatchBabyRestAsync(object):
     """An asynchronous interface to a Hatch Baby Rest device using bleak."""
 
@@ -81,8 +80,6 @@ class PyHatchBabyRestAsync(object):
         :param command: The command to send.
         """
         self.device = await self._ensure_scan()
-
-
 
         async with await self.client as client:
             await client.write_gatt_char(

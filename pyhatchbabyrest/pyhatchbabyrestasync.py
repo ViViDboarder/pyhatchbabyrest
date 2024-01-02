@@ -159,32 +159,40 @@ class PyHatchBabyRestAsync(object):
 
     async def power_on(self):
         command = "SI{:02x}".format(1)
+        self.power = True
         await self._send_command(command)
 
     async def power_off(self):
         command = "SI{:02x}".format(0)
+        self.power = False
         await self._send_command(command)
 
-    async def set_sound(self, sound):
+    async def set_sound(self, sound: PyHatchBabyRestSound):
         command = "SN{:02x}".format(sound)
+        self.sound = sound
         return await self._send_command(command)
 
-    async def set_volume(self, volume):
+    async def set_volume(self, volume: int):
         command = "SV{:02x}".format(volume)
+        self.volume = volume
         return await self._send_command(command)
 
-    async def set_color(self, red, green, blue):
+    async def set_color(self, red: int, green: int, blue: int):
+        # Always refresh to get latest brightness
         await self.refresh_data()
 
         command = "SC{:02x}{:02x}{:02x}{:02x}".format(red, green, blue, self.brightness)
+        self.color = (red, green, blue)
         return await self._send_command(command)
 
     async def set_brightness(self, brightness):
+        # Always refresh to get latest color
         await self.refresh_data()
 
         command = "SC{:02x}{:02x}{:02x}{:02x}".format(
             self.color[0], self.color[1], self.color[2], brightness
         )
+        self.brightness = brightness
         return await self._send_command(command)
     
     async def set_time(self, time: struct_time = None):

@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pyhatchbabyrest-hass",
-    version="2.2.1",
+    version="2.3.0",
     author="Kevin O'Connor, ViViDboarder",
     author_email="kjoconnor@gmail.com, ViViDboarder@gmail.com",
     description="Python library to control Hatch Baby Rest devices",
